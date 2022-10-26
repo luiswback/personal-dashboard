@@ -1,3 +1,9 @@
+Projeto feito em angular 13. Um lugar onde pode-se criar tarefas, anotações e salvar seus sites favoritos.
+
+https://personal-dashboard-ktl2bgpug-luiswback.vercel.app
+
+
+
 # PersonalDashboard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
