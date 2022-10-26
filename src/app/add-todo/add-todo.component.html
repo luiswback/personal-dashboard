@@ -1,0 +1,24 @@
+<div class="add-todo-wrapper container has-blurred-white-bg">
+
+  <h2 class="is-bold">Nova tarefa</h2>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+
+    <div class="form-field">
+      <input class="text-box" ngModel #textField="ngModel" name="text" type="text" placeholder="Insira sua tarefa" required minlength="3">
+      <ng-container
+        *ngIf="showValidationErrors && textField.invalid">
+        <p *ngIf="textField.errors!['required']">Por favor insira uma texto na caixa de tarefas.</p>
+        <p *ngIf="textField.errors!['minlength']">A tarefa precisa de pelo menos 3 caracteres!</p>
+      </ng-container>
+    </div>
+
+    <div class="buttons-container">
+      <button class="btn">Criar tarefa</button>
+      <a routerLink="../" class="btn  align-end">Cancelar</a>
+
+    </div>
+  </form>
+
+</div>
+
+

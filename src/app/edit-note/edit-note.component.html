@@ -1,0 +1,32 @@
+<div class="edit-note-wrapper container has-blurred-white-bg">
+
+  <h2 class="is-bold">Editar Anotação</h2>
+  <p *ngIf="!note">Anotação não encontrada!</p>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" *ngIf="note">
+    <div class="form-field">
+      <input class="text-box" [ngModel]="note.title" #titleField="ngModel" name="title" type="text" placeholder="Insira o título de sua anotação" required minlength="3">
+
+      <ng-container *ngIf="titleField.invalid">
+        <p *ngIf="titleField.errors!['required']">Por favor insira um título para a anotação!</p>
+        <p *ngIf="titleField.errors!['minlength']">O título precisa de pelo menos 3 caracteres!</p>
+      </ng-container>
+
+    </div>
+
+    <div class="form-field">
+      <textarea class="textarea" [ngModel]="note.content" name="content" placeholder="Insira o conteúdo da anotação"></textarea>
+    </div>
+
+    <div class="buttons-container">
+      <button class="btn">Salvar alterações</button>
+      <button type="button" class="btn" (click)="deleteNote()">Excluir anotação</button>
+
+      <a routerLink="../" class="btn  align-end">Cancelar</a>
+
+    </div>
+  </form>
+
+</div>
+
+

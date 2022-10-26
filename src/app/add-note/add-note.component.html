@@ -1,0 +1,28 @@
+<div class="add-note-wrapper container has-blurred-white-bg">
+
+  <h2 class="is-bold">Nova anotação</h2>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="form-field">
+      <input class="text-box" ngModel #titleField="ngModel" name="title" type="text" placeholder="Insira o título de sua anotação" required minlength="3">
+
+      <ng-container *ngIf="showValidationErrors && titleField.invalid">
+      <p *ngIf="titleField.errors!['required']">Por favor insira um título para a anotação!</p>
+      <p *ngIf="titleField.errors!['minlength']">O título precisa de pelo menos 3 caracteres!</p>
+      </ng-container>
+
+    </div>
+
+    <div class="form-field">
+    <textarea class="textarea" ngModel name="content" placeholder="Insira o conteúdo da anotação"></textarea>
+    </div>
+
+    <div class="buttons-container">
+      <button class="btn">Criar anotação</button>
+      <a routerLink="../" class="btn  align-end">Cancelar</a>
+
+    </div>
+  </form>
+
+</div>
+
+
