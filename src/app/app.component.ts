@@ -153,7 +153,7 @@ const baseStyles = style({
 })
 export class AppComponent implements OnInit{
 
-  backgrounds: string[] = ['https://images.unsplash.com/photo-1666688832727-0f5dfb2b50c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80']
+  backgrounds: string[] = ['https://free4kwallpapers.com/uploads/originals/2021/04/13/minimalist-code-wallpaper.png']
   loadingBgImage: boolean = false
 
   dateTime?: Observable<Date>
