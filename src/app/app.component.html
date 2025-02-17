@@ -2,14 +2,9 @@
 <div class="app-wrapper">
 
   <img
-    [src]="bg"
-    *ngFor="let bg of backgrounds.reverse()"
-    class="bg-img" alt="" (load)="onBgImageLoad($event)"
+    [src]="'assets/smartphone-with-user-interface-concept.jpg'"
+    class="bg-img" alt=""
   @bgAnim>
-
-  <div class="btn change-bg-btn" (click)="changeBgImage()" *ngIf="!loadingBgImage" @fadeAnim>
-    <i class="material-icons">refresh</i>
-  </div>
 
   <div class="top-section">
 <!--    <h1>11:00</h1>-->

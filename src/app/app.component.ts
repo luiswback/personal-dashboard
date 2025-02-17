@@ -153,7 +153,6 @@ const baseStyles = style({
 })
 export class AppComponent implements OnInit{
 
-  backgrounds: string[] = ['https://free4kwallpapers.com/uploads/originals/2021/04/13/minimalist-code-wallpaper.png']
   loadingBgImage: boolean = false
 
   dateTime?: Observable<Date>
@@ -174,30 +173,6 @@ export class AppComponent implements OnInit{
       if (!tab) return 'secundary'
       return tab
     }
-  }
-
-  async changeBgImage(): Promise<any> {
-    this.loadingBgImage = true
-    const result = await fetch('https://source.unsplash.com/random/1920x1080', {
-      method: 'HEAD'
-    })
-
-    const alreadyGot = this.backgrounds.includes(result.url)
-    if (alreadyGot) {
-      //this is the same image as we currently have, so re-run the function to get another image
-      return this.changeBgImage()
-    }
-
-
-    this.backgrounds.push(result.url)
-  }
-
-  onBgImageLoad(imgEvent: Event) {
-    //BG image has loaded, now remove the old BG image from the backgrounds array
-    const imgElement = imgEvent.target as HTMLImageElement
-    const src = imgElement.src
-    this.backgrounds = this.backgrounds.filter(b => b === src)
-    this.loadingBgImage = false;
   }
 }
 
